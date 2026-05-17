@@ -55,6 +55,14 @@ Multiple DNS servers can be defined.
 ```
 
 
+```{cfgcmd} set service dhcp-server shared-network-name \<name\> option time-zone \<time-zone\>
+
+A timezone identified by IANA Time Zone Database Identifier can be specified for DHCP clients.
+This is the configuration parameter for the entire shared network definition. Internally, this uses
+RFC4833 options 100 and 101. All subnets will inherit this configuration item if not specified locally.
+```
+
+
 ```{cfgcmd} set service dhcp-server shared-network-name \<name\> option vendor-option \<option-name\>
 
 This configuration parameter lets you specify a vendor-option for the
@@ -1014,6 +1022,13 @@ address of Fully Qualified Domain Name for all DHCPv6 clients.
 ```{cfgcmd} set service dhcpv6-server shared-network-name \<name\> subnet \<prefix\> option sntp-server-address \<address\>
 
 A SNTP server address can be specified for DHCPv6 clients.
+```
+
+
+```{cfgcmd} set service dhcpv6-server shared-network-name \<name\> subnet \<prefix\> option time-zone \<time-zone\>
+
+A timezone identified by IANA Time Zone Database Identifier can be specified for DHCPv6 clients.
+Internally, this uses RFC4833 options 41 and 42.
 ```
 
 #### Prefix Delegation
